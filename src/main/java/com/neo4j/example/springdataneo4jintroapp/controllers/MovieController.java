@@ -30,4 +30,9 @@ public class MovieController {
     public Iterable<Movie> findMovieByTitleLike(@PathVariable String title) {
         return movieRepository.findMovieByTitleLike(title);
     }
+
+    @PostMapping
+    public Movie saveMovie(@RequestBody Movie newMovie) {
+        return movieRepository.save(newMovie);
+    }
 }
